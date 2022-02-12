@@ -1,0 +1,29 @@
+{
+  "name": "smart-mind-api-docker",
+  "version": "1.0.0",
+  "description": "backend for smart mind",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon server.js",
+    "start": "node server.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229"
+  },
+  "author": "iChristiano",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "clarifai": "^2.9.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "ioredis": "^4.28.4",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^1.0.1",
+    "morgan": "^1.9.1",
+    "pg": "^8.7.1",
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}

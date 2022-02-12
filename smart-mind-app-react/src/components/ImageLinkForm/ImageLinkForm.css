@@ -1,0 +1,6 @@
+.form {
+    width: 700px;
+    background: linear-gradient(89deg, #efefef 0%, #eee 100%);
+    opacity: 0.80;
+    background-size: 100px 100px;
+}

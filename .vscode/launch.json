@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Docker: Attach to Node",
+        "type": "node",
+        "request": "attach",
+        "restart": true,
+        "port": 9229,
+        "address": "localhost",
+        "localRoot": "${workspaceFolder}/smart-mind-api-docker",
+        "remoteRoot": "/smart-mind/smart-mind-api-docker",
+        "protocol": "inspector",
+        "skipFiles": [
+            "${workspaceFolder}/node_modules/**/*.js",
+            "<node_internals>/**/*.js"
+          ]
+      }
+    ]
+  }

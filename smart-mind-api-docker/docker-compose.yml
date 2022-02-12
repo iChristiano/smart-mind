@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+    # docker-compose up --build
+    # docker-compose down
+    # docker rm -f $(docker ps -a -q)      
+    # docker volume rm $(docker volume ls -q)
+    # docker exec -it backend bash
+    # Backend API
+    # env_file:
+    #   - ./.private/api-keys.env "env variables" 
+    smart-mind-api-docker:
+        container_name: backend
+        # image: node:16.13
+        build: ./
+        command: npm run start
+        working_dir: /usr/git/smart-mind/smart-mind-api-docker
+        environment: 
+            POSTGRES_URI: postgres://admin:secret@postgres:5432/smart-mind
+            JWT_SECRET: JWTSECRET
+            REDIS_URI: redis://redis:6379
+        ports: 
+            - "3000:3000"
+            - "9229:9229"
+        volumes: 
+            - ./:/smart-mind/smart-mind-api-docker
+
+    # Postgres
+    # docker exec -it postgres psql -d smart-mind -U admin -> SELECT * FROM users
+    postgres:
+        container_name: postgres
+        environment: 
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: smart-mind
+            POSTGRES_HOST: postgres
+        build: ./postgres
+        ports:
+            - "5432:5432"
+
+    # Redis
+    # docker-compose exec redis redis-cli -> Keys *
+    redis:
+        container_name: redis
+        image: redis:6.2.6
+        ports:
+            - "6379:6379"
