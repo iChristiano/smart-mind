@@ -24,7 +24,7 @@ const particlesOptions = {
         }
       };
 
-const defaultImage = 'https://www.thesun.co.uk/wp-content/uploads/2016/04/1807626.main_image.jpg?strip=all&w=620&h=413&crop=1';
+const defaultImage = 'https://ichef.bbci.co.uk/news/976/cpsprodpb/0378/production/_117388800_050321presidentsposter-1.jpg';
 
 const url ='http://localhost:3000'; //'https://limitless-lake-68008.herokuapp.com'
 

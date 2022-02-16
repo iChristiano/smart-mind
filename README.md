@@ -34,6 +34,16 @@ The aim of the application is to detect faces in user provided images. A user ca
 - Navigate to the project directory
 - Navigate to backend directory
     > /smart-mind-api-docker
+- Get an API key from [ClarifAI](https://www.clarifai.com/) and provide the api key to the backend application via file:
+    > **filename:** api-keys.js 
+
+    > **filecontent:** const apiKeys = {
+    ai: {
+        name: "clarifai",
+        key: "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+    } 
+};
+module.exports = apiKeys;
 - Build and run the backend via terminal
     > docker-compose up --build
 
